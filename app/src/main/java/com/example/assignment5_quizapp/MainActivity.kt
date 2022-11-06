@@ -59,17 +59,14 @@ class MainActivity : AppCompatActivity() {
 
     fun onResetClicked(view: View) {
 
-        //reset question 1 options
         radioOption1.isChecked = false
         radioOption2.isChecked = false
         radioOption3.isChecked = false
 
-        //reset question 2 options
         checkboxOption1.isChecked = false
         checkboxOption2.isChecked = false
         checkboxOption3.isChecked = false
 
-        //reset answer variable
         ans1 = ""
         ans2 = ""
     }
@@ -81,11 +78,9 @@ class MainActivity : AppCompatActivity() {
 
         val current = LocalDateTime.now()
 
-        //get date
         val formatterDate = DateTimeFormatter.ofPattern("yyyy-MM-dd")
         val date = current.format(formatterDate)
 
-        //get time
         val formatterTime = DateTimeFormatter.ofPattern("HH:mm:ss")
         val time = current.format(formatterTime)
 
@@ -148,10 +143,8 @@ class MainActivity : AppCompatActivity() {
 
     fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
-            // Is the button now checked?
             val checked = view.isChecked
 
-            // Check which radio button was clicked
             when (view.getId()) {
                 R.id.radio_opt1_q1 ->
                     if (checked) {
@@ -161,7 +154,6 @@ class MainActivity : AppCompatActivity() {
                     if (checked) {
                         ans1 = "B"
                     }
-
                 R.id.radio_opt3_q1 ->
                     if (checked) {
                         ans1 = "C"
